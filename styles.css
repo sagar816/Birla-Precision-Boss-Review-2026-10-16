@@ -1,0 +1,3356 @@
+@font-face {
+   font-family: Toxigenesis;
+   src: url('assets/fonts/toxigenesis-bd.ttf')
+}
+
+@font-face {
+   font-family: Geist;
+   src: url('assets/fonts/geist.ttf');
+   font-display: swap
+}
+
+:root {
+   --orange: #ff6600;
+   --ink: #171717;
+   --muted: #747474;
+   --line: #dedede;
+   --content: 1200px;
+   --heading: 40px;
+   --body: 15px
+}
+
+* {
+   box-sizing: border-box
+}
+
+html {
+   scroll-behavior: smooth;
+   scroll-padding-top: 85px
+}
+
+body {
+   margin: 0;
+   color: var(--ink);
+   background: #fff;
+   font: var(--body)/1.55 Geist, Arial, sans-serif
+}
+
+button,
+input,
+textarea,
+select {
+   font: inherit
+}
+
+button,
+a,
+input,
+select,
+textarea {
+   -webkit-tap-highlight-color: transparent
+}
+
+button,
+a {
+   touch-action: manipulation
+}
+
+a {
+   color: inherit;
+   text-decoration: none
+}
+
+button {
+   cursor: pointer
+}
+
+img {
+   max-width: 100%;
+   display: block
+}
+
+button {
+   color: inherit
+}
+
+h1,
+h2,
+h3,
+p {
+   margin: 0
+}
+
+p {
+   margin-bottom: 16px
+}
+
+h2 {
+   font-family: Toxigenesis, Arial, sans-serif;
+   font-size: var(--heading);
+   line-height: 1.12;
+   font-weight: 400;
+   letter-spacing: -.035em
+}
+
+h3 {
+   font-size: 18px;
+   line-height: 1.25
+}
+
+button:focus-visible,
+a:focus-visible {
+   outline: 2px solid var(--orange);
+   outline-offset: 5px
+}
+
+.container {
+   width: min(var(--content), calc(100% - 64px));
+   margin-inline: auto
+}
+
+.orange,
+.text-link {
+   color: var(--orange)
+}
+
+.eyebrow {
+   font-size: 11px;
+   letter-spacing: 2.2px;
+   font-weight: 700;
+   color: var(--orange);
+   margin-bottom: 16px
+}
+
+.section-heading p:last-child {
+   color: var(--muted);
+   margin-top: 14px
+}
+
+.centered {
+   text-align: center
+}
+
+.button {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   background: var(--orange);
+   color: white;
+   padding: 12px 20px;
+   border: 0;
+   font-size: 12px
+}
+
+.text-link {
+   display: inline-block;
+   font-size: 13px;
+   border-bottom: 1px solid #ffc6a2;
+   padding-bottom: 6px
+}
+
+.skip {
+   position: fixed;
+   top: -100px;
+   left: 20px;
+   z-index: 100;
+   background: white;
+   padding: 12px
+}
+
+.skip:focus {
+   top: 10px
+}
+
+header {
+   height: 82px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 30
+}
+
+.nav {
+   height: 100%;
+   display: flex;
+   align-items: center;
+   gap: 35px
+}
+
+.logo {
+   width: 125px;
+   height: 48px;
+   object-fit: contain;
+   object-position: left center
+}
+
+.nav nav {
+   display: flex;
+   gap: 26px;
+   margin-left: auto;
+   font-size: 12px
+}
+
+.nav nav a:hover {
+   color: var(--orange)
+}
+
+.nav-actions {
+   display: flex;
+   gap: 20px;
+   align-items: center
+}
+
+.menu-toggle {
+   display: none
+}
+
+.language {
+   position: relative
+}
+
+.language>button {
+   background: none;
+   border: 0;
+   padding: 8px 0;
+   font-size: 12px
+}
+
+.language>button span {
+   margin: 0 6px
+}
+
+#language-options {
+   position: absolute;
+   right: 0;
+   top: 40px;
+   width: 230px;
+   background: white;
+   padding: 12px;
+   box-shadow: 0 6px 30px #0002;
+   border: 1px solid var(--line)
+}
+
+#language-options p {
+   font-size: 11px;
+   color: var(--muted);
+   margin: 4px 8px 8px
+}
+
+#language-options button {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   padding: 9px;
+   background: none;
+   border: 0;
+   text-align: left;
+   font-size: 13px
+}
+
+#language-options button:hover {
+   background: #f5f5f5
+}
+
+#language-options small {
+   color: #999;
+   font-size: 10px
+}
+
+.social-rail {
+   position: fixed;
+   right: 0;
+   top: 40%;
+   z-index: 40;
+   background: #fffE;
+   border: 1px solid #eee;
+   box-shadow: 0 4px 15px #0001;
+   border-right: 0
+}
+
+.social-rail a {
+   display: grid;
+   place-items: center;
+   width: 32px;
+   height: 36px;
+   font-weight: bold;
+   font-size: 14px;
+   border-bottom: 1px solid #eee
+}
+
+.social-rail a:hover {
+   background: var(--orange);
+   color: white
+}
+
+.hero-scroll {
+   height: 210vh;
+   min-height: 1200px
+}
+
+.hero-stage {
+   height: 100vh;
+   min-height: 640px;
+   position: sticky;
+   top: 0;
+   overflow: hidden;
+   background: white
+}
+
+.hero-copy {
+   height: 100%;
+   position: relative;
+   padding-top: 130px
+}
+
+.hero-first,
+.hero-last {
+   font-family: Toxigenesis, sans-serif;
+   font-size: clamp(64px, 8.7vw, 126px);
+   line-height: .98;
+   letter-spacing: -.065em;
+   position: absolute;
+   z-index: 2;
+   white-space: nowrap;
+   font-weight: 400
+}
+
+.hero-first {
+   top: 19%;
+   left: 0
+}
+
+.hero-last {
+   bottom: 20%;
+   right: 0
+}
+
+.hero-description {
+   position: absolute;
+   top: 43%;
+   left: 0;
+   max-width: 190px
+}
+
+.hero-description span {
+   display: block;
+   margin-top: 18px;
+   font-size: 13px;
+   color: var(--muted)
+}
+
+.hero-lines {
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(135deg, transparent 76%, #eee 76.1%, transparent 76.2%);
+   pointer-events: none
+}
+
+.hero-lines:after {
+   content: '';
+   position: absolute;
+   right: 0;
+   top: 25%;
+   width: 170px;
+   height: 100px;
+   background: linear-gradient(135deg, #fff, #ff6600);
+   transform: skewY(-45deg)
+}
+
+.hero-media {
+   position: absolute;
+   top: 36%;
+   left: calc(50% - 200px);
+   width: 400px;
+   height: 250px;
+   z-index: 3;
+   overflow: hidden;
+   will-change: width, height, left, top;
+   background: #242424
+}
+
+.hero-media video {
+   width: 100%;
+   height: 100%;
+   object-fit: cover
+}
+
+.video-control {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   border: 1px solid #fffa;
+   border-radius: 50%;
+   color: white;
+   background: #0002;
+   width: 45px;
+   height: 45px
+}
+
+.video-caption {
+   position: absolute;
+   left: 40px;
+   top: 40px;
+   color: white;
+   font-size: 11px;
+   letter-spacing: 4px;
+   opacity: 0
+}
+
+.scroll-prompt {
+   position: absolute;
+   bottom: 11%;
+   left: 0;
+   color: #777;
+   display: flex;
+   flex-direction: column;
+   gap: 25px
+}
+
+.scroll-prompt>span {
+   font-size: 9px;
+   letter-spacing: 2px
+}
+
+.about-scroll {
+   height: 145vh;
+   min-height: 850px
+}
+
+.about-stage {
+   height: 100vh;
+   min-height: 650px;
+   position: sticky;
+   top: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center
+}
+
+.heritage-large {
+   font-size: clamp(100px, 16vw, 225px);
+   line-height: 1.1;
+   letter-spacing: -.07em;
+   color: transparent;
+   -webkit-text-stroke: 1px #cfc9c5;
+   white-space: nowrap;
+   transform-origin: 0 0;
+   position: absolute;
+   top: 10%;
+   left: 0;
+   z-index: 5;
+   will-change: transform
+}
+
+.about-grid {
+   display: grid;
+   grid-template-columns: 1fr 1.2fr;
+   gap: 90px;
+   align-items: center;
+   padding-top: 210px
+}
+
+.heritage-arrow {
+   font: 330px/.9 Arial;
+   color: var(--orange);
+   font-weight: 200
+}
+
+.about-title {
+   font-size: 40px;
+   margin-bottom: 25px
+}
+
+.about-copy>p:not(.eyebrow) {
+   color: var(--muted);
+   max-width: 510px
+}
+
+.year-target {
+   white-space: nowrap;
+   display: inline-block
+}
+
+.about-copy .eyebrow {
+   margin-bottom: 12px
+}
+
+.division-scroll {
+   height: 230vh;
+   min-height: 1450px
+}
+
+.division-stage {
+   height: 200vh;
+   min-height: 720px;
+   position: sticky;
+   top: 0;
+   overflow: hidden;
+   background: radial-gradient(ellipse at 50% 65%, rgb(247, 247, 247) 65%);
+   padding: 48px 0 16px
+}
+
+.division-stage h2 {
+   max-width: 920px;
+   margin: auto
+}
+
+.card-arena {
+   height: 540px;
+   position: relative;
+   max-width: 1100px;
+   margin: 10px auto 0
+}
+
+.division-cards {
+   position: absolute;
+   inset: 0
+}
+
+.product-card {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   width: 205px;
+   height: 285px;
+   padding: 18px 16px 14px;
+   background: linear-gradient(135deg, #969a9d, #54585b);
+   color: white;
+   border: 1px solid #fff5;
+   box-shadow: 0 12px 24px #0002;
+   border-radius: 5px;
+   transform: translate(-50%, -50%);
+   will-change: transform;
+   display: flex;
+   flex-direction: column
+}
+
+.product-card:nth-child(2n) {
+   background: linear-gradient(135deg, #72777a, #404548)
+}
+
+.product-card:nth-child(3) {
+   background: linear-gradient(135deg, #696d70, #303437)
+}
+
+.card-logo {
+   height: 30px;
+   width: 100px;
+   object-fit: contain;
+   object-position: left center;
+   margin-bottom: 12px
+}
+
+.card-logo.subsidiary {
+   width: 85px;
+   object-position: left center
+}
+
+.product-card h3 {
+   font: 17px/1.1 Geist, sans-serif;
+   font-weight: bold;
+   margin-bottom: 6px
+}
+
+.product-card p {
+   font-size: 10px;
+   line-height: 1.4;
+   opacity: .8;
+   margin: 0
+}
+
+.product-card .product {
+   height: 115px;
+   object-fit: contain;
+   width: 100%;
+   margin-top: auto
+}
+
+.product-card a {
+   font-size: 8px;
+   letter-spacing: 1px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border-top: 1px solid #fff3;
+   padding-top: 7px;
+   margin-top: 4px
+}
+
+.product-card a span {
+   background: var(--orange);
+   border-radius: 50%;
+   height: 20px;
+   width: 20px;
+   display: grid;
+   place-items: center;
+   font-size: 14px
+}
+
+.orbit {
+   position: absolute;
+   width: 530px;
+   height: 430px;
+   border: 1px solid #d9dde0;
+   border-radius: 50%;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   opacity: 0
+}
+
+.orbit:after {
+   content: '';
+   position: absolute;
+   inset: 35px;
+   border: 1px dashed #dce0e3;
+   border-radius: 50%
+}
+
+.orbit-logo {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 140px;
+   opacity: 0
+}
+
+.division-hint {
+   text-align: center;
+   font-size: 9px;
+   letter-spacing: 2px;
+   color: #999;
+   margin: 0
+}
+
+.division-hint span {
+   display: block;
+   font-size: 16px
+}
+
+.process {
+   padding-block: 110px
+}
+
+.process>h2 {
+   margin-bottom: 18px
+}
+
+.section-intro {
+   color: var(--muted)
+}
+
+.process-grid {
+   position: relative;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 55px 230px;
+   padding: 65px 0 0
+}
+
+.step {
+   min-height: 130px;
+   max-width: 410px;
+   border-top: 1px solid var(--line);
+   padding-top: 12px;
+   position: relative
+}
+
+.step:nth-of-type(even) {
+   transform: translateY(65px)
+}
+
+.step:after {
+   content: '';
+   width: 6px;
+   height: 6px;
+   background: var(--orange);
+   border-radius: 50%;
+   position: absolute;
+   right: -3px;
+   top: -3px
+}
+
+.step:nth-of-type(even):after {
+   left: -3px
+}
+
+.step-number {
+   color: var(--orange);
+   font: 25px Toxigenesis, sans-serif
+}
+
+.step h3 {
+   font-size: 15px;
+   margin: 5px 0
+}
+
+.step p {
+   color: var(--muted);
+   max-width: 300px
+}
+
+.tool-track {
+   position: absolute;
+   left: 50%;
+   top: 15px;
+   bottom: 0;
+   transform: translateX(-50%);
+   width: 85px
+}
+
+.tool-track:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 50%;
+   border-left: 1px dashed #ddd
+}
+
+.tool-track img {
+   position: absolute;
+   width: 57px;
+   height: 255px;
+   object-fit: contain;
+   left: 14px
+}
+
+.tool-ghost {
+   opacity: .12
+}
+
+.moving-tool {
+   filter: drop-shadow(4px 8px 6px #0002);
+   will-change: transform
+}
+
+.tool-track span {
+   position: absolute;
+   bottom: -45px;
+   left: 38px;
+   color: var(--orange)
+}
+
+.mission {
+   background: var(--orange);
+   color: white;
+   padding: 70px 0
+}
+
+.mission-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   align-items: center;
+   gap: 70px
+}
+
+.mission .eyebrow {
+   color: white
+}
+
+.mission h2 {
+   margin-bottom: 20px
+}
+
+.mission p:not(.eyebrow) {
+   max-width: 440px
+}
+
+.outline-button {
+   border: 1px solid #fffa;
+   padding: 10px 18px;
+   display: inline-block;
+   font-size: 12px
+}
+
+.mission-art {
+   position: relative;
+   height: 480px;
+   max-width: 360px;
+   justify-self: center;
+   width: 100%
+}
+
+.mission-symbol {
+   height: 440px;
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 0
+}
+
+.engineer {
+   position: absolute;
+   width: 100%;
+   height: 290px;
+   object-fit: contain;
+   object-position: center bottom;
+   bottom: 30px;
+   left: 0;
+   clip-path: polygon(0 0, 100% 0, 100% 49%, 0 100%)
+}
+
+.mission-wordmark {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   text-align: center;
+   font-weight: bold;
+   font-size: 17px;
+   letter-spacing: 1px
+}
+
+.stats {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   margin-top: 45px;
+   border-top: 1px solid #fff6;
+   padding: 24px 0
+}
+
+.stats>div {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+   border-right: 1px solid #fff8
+}
+
+.stats>div:last-child {
+   border: 0
+}
+
+.stats strong {
+   font: 42px/1 Toxigenesis, sans-serif
+}
+
+.stats span {
+   font-size: 12px;
+   line-height: 1.3
+}
+
+.quality {
+   padding: 110px 0 80px
+}
+
+.quality h2 {
+   margin-bottom: 40px
+}
+
+.quality-grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   border-block: 1px solid var(--line)
+}
+
+.quality-grid a {
+   padding: 40px 28px;
+   min-height: 190px;
+   border-right: 1px solid var(--line)
+}
+
+.quality-grid a:first-child {
+   padding-left: 0
+}
+
+.quality-grid a:last-child {
+   border: 0
+}
+
+.quality-grid p {
+   margin: 20px 0 0
+}
+
+.quality-icon {
+   font-size: 36px;
+   color: #8a939c;
+   line-height: 1
+}
+
+.quality-grid a:hover p {
+   color: var(--orange)
+}
+
+.industry-scroll {
+   height: 190vh;
+   min-height: 1300px
+}
+
+.industry-stage {
+   position: sticky;
+   top: 0;
+   height: 100vh;
+   min-height: 700px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding-block: 40px
+}
+
+.industry-panel {
+   position: relative;
+   height: 430px;
+   min-height: 350px;
+   margin-top: 25px;
+   overflow: hidden;
+   background: #999
+}
+
+.industry-images {
+   position: absolute;
+   inset: 0
+}
+
+.industry-images img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   position: absolute;
+   inset: 0;
+   opacity: 0;
+   transition: opacity .7s ease, transform 1.3s ease;
+   transform: scale(1.025)
+}
+
+.industry-images img.active {
+   opacity: 1;
+   transform: scale(1)
+}
+
+.industry-tabs {
+   position: absolute;
+   inset: 0;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   background: linear-gradient(transparent 40%, #000a)
+}
+
+.industry-tabs button {
+   background: transparent;
+   border: 0;
+   border-right: 1px solid #fff6;
+   border-top: 3px solid transparent;
+   color: white;
+   text-align: left;
+   padding: 18px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between
+}
+
+.industry-tabs button[aria-selected=true] {
+   border-top-color: var(--orange);
+   background: linear-gradient(transparent, #0002)
+}
+
+.sector-number {
+   font-size: 12px;
+   opacity: .8
+}
+
+.industry-tabs strong {
+   font-size: 18px;
+   font-weight: 500
+}
+
+.industry-tabs small {
+   display: block;
+   font-size: 12px;
+   line-height: 1.4;
+   max-height: 0;
+   opacity: 0;
+   margin-top: 0;
+   transition: .35s
+}
+
+.industry-tabs [aria-selected=true] small {
+   max-height: 70px;
+   opacity: 1;
+   margin-top: 10px
+}
+
+.industry-hint {
+   text-align: center;
+   font-size: 11px;
+   color: #999;
+   margin-top: 14px
+}
+
+.marquee {
+   position: relative;
+   overflow: hidden;
+   border-block: 1px solid #eee;
+   padding: 25px 0;
+   background: white
+}
+
+.marquee-track {
+   display: flex;
+   width: max-content;
+   animation: marquee 35s linear infinite
+}
+
+.marquee-track span {
+   font: 28px Toxigenesis, sans-serif;
+   white-space: nowrap;
+   display: flex;
+   align-items: center;
+   gap: 27px;
+   padding-right: 27px
+}
+
+.marquee b {
+   color: var(--orange);
+   font: 35px Arial
+}
+
+.marquee-toggle {
+   position: absolute;
+   right: 0;
+   top: 0;
+   height: 100%;
+   background: white;
+   border: 0;
+   border-left: 1px solid #eee;
+   width: 30px;
+   font-size: 12px
+}
+
+.marquee.paused .marquee-track {
+   animation-play-state: paused
+}
+
+@keyframes marquee {
+   to {
+      transform: translateX(-50%)
+   }
+}
+
+.contact {
+   background: linear-gradient(90deg, #1d1d1d 0 57%, var(--orange) 57% 100%);
+   color: white;
+   padding: 80px 0 55px
+}
+
+.contact-grid {
+   display: grid;
+   grid-template-columns: 1.2fr 1fr;
+   gap: 100px;
+   align-items: center
+}
+
+.contact-copy h2 {
+   margin-bottom: 20px
+}
+
+.contact-copy>p:not(.eyebrow) {
+   color: #aaa
+}
+
+.certificates {
+   display: flex;
+   gap: 20px;
+   border-top: 1px solid #ffffff26;
+   margin-top: 30px;
+   padding-top: 25px
+}
+
+.certificates a {
+   flex: 1;
+   min-width: 0
+}
+
+.certificates img {
+   height: 90px;
+   width: 72px;
+   object-fit: cover;
+   object-position: top;
+   background: white;
+   padding: 3px;
+   transition: transform .25s
+}
+
+.certificates a:hover img {
+   transform: translateY(-5px)
+}
+
+.certificates span {
+   display: block;
+   font-size: 9px;
+   color: #aaa;
+   margin-top: 10px
+}
+
+form {
+   padding: 32px;
+   background: white;
+   color: var(--ink);
+   box-shadow: 0 15px 40px #0002
+}
+
+form h3 {
+   margin-bottom: 22px
+}
+
+.form-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 12px
+}
+
+form label {
+   display: block;
+   font-size: 11px;
+   margin-bottom: 12px;
+   color: #666
+}
+
+input,
+select,
+textarea {
+   display: block;
+   width: 100%;
+   border: 1px solid #e5e5e5;
+   background: white;
+   border-radius: 0;
+   padding: 11px;
+   font-size: 12px;
+   color: #333;
+   margin-top: 5px
+}
+
+textarea {
+   resize: vertical
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+   outline: 1px solid var(--orange)
+}
+
+.consent {
+   display: flex;
+   align-items: center;
+   gap: 8px
+}
+
+.consent input {
+   width: 13px;
+   margin: 0
+}
+
+.dark {
+   background: #1e1e1e;
+   font-size: 10px
+}
+
+.form-note {
+   font-size: 10px;
+   color: #888;
+   margin: 13px 0 0
+}
+
+#form-status {
+   font-size: 12px;
+   margin-top: 10px
+}
+
+footer {
+   background: #171717;
+   color: #aaa;
+   padding: 65px 0 20px;
+   font-size: 13px
+}
+
+.footer-grid {
+   display: grid;
+   grid-template-columns: 1.2fr .8fr .8fr 1.2fr;
+   gap: 55px
+}
+
+.footer-logo {
+   width: 150px;
+   margin-bottom: 25px
+}
+
+.footer-grid h3 {
+   font: 13px Geist, sans-serif;
+   color: white;
+   margin-bottom: 22px
+}
+
+.footer-grid a {
+   display: block;
+   margin-bottom: 10px
+}
+
+.footer-grid a:hover {
+   color: white
+}
+
+.footer-bottom {
+   border-top: 1px solid #333;
+   display: flex;
+   justify-content: space-between;
+   gap: 20px;
+   font-size: 10px;
+   padding-top: 25px;
+   margin-top: 45px
+}
+
+.toast {
+   position: fixed;
+   bottom: 25px;
+   left: 50%;
+   transform: translate(-50%, 20px);
+   padding: 12px 22px;
+   background: #222;
+   color: white;
+   z-index: 100;
+   font-size: 13px;
+   opacity: 0;
+   pointer-events: none;
+   transition: .25s;
+   max-width: 90vw
+}
+
+.toast.show {
+   opacity: 1;
+   transform: translate(-50%, 0)
+}
+
+@media(min-width:1600px) {
+
+   .hero-first,
+   .hero-last {
+      font-size: 126px
+   }
+}
+
+@media(max-height:760px) and (min-width:901px) {
+   .division-stage {
+      padding-top: 22px
+   }
+
+   .card-arena {
+      height: 470px
+   }
+
+   .division-stage h2 {
+      font-size: 40px
+   }
+
+   .industry-panel {
+      height: 360px
+   }
+
+   .industry-stage {
+      min-height: 630px
+   }
+
+   .hero-first {
+      top: 20%
+   }
+
+   .hero-last {
+      bottom: 8%
+   }
+
+   .hero-media {
+      height: 210px
+   }
+
+   .about-grid {
+      padding-top: 180px
+   }
+}
+
+@media(max-width:1000px) {
+   .nav nav {
+      gap: 15px
+   }
+
+   .nav {
+      gap: 20px
+   }
+
+   .nav-actions {
+      gap: 12px
+   }
+
+   .logo {
+      width: 110px
+   }
+
+   .nav-actions .button {
+      padding: 10px 12px
+   }
+
+   .hero-first,
+   .hero-last {
+      font-size: 8.8vw
+   }
+
+   .hero-media {
+      width: 340px;
+      left: calc(50% - 140px)
+   }
+
+   .about-grid {
+      gap: 40px
+   }
+
+   .heritage-arrow {
+      font-size: 250px
+   }
+
+   .product-card {
+      width: 180px;
+      height: 265px
+   }
+
+   .process-grid {
+      gap: 55px 170px
+   }
+
+   .mission-grid {
+      gap: 35px
+   }
+
+   .contact-grid {
+      gap: 55px
+   }
+
+   .mission h2 {
+      font-size: 40px
+   }
+}
+
+@media(max-width:760px) {
+   :root {
+      --heading: 28px
+   }
+
+   .container {
+      width: calc(100% - 40px)
+   }
+
+   header {
+      height: 72px
+   }
+
+   .nav {
+      gap: 12px
+   }
+
+   .logo {
+      width: 110px
+   }
+
+   .menu-toggle {
+      display: block;
+      border: 0;
+      background: none;
+      margin-left: auto;
+      font-size: 23px
+   }
+
+   .nav nav {
+      display: none;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      padding: 25px;
+      background: white;
+      border-bottom: 1px solid #eee;
+      flex-direction: column;
+      font-size: 15px
+   }
+
+   .nav nav.open {
+      display: flex
+   }
+
+   .nav-actions .button {
+      display: none
+   }
+
+   .nav-actions {
+      gap: 0
+   }
+
+   .social-rail {
+      top: auto;
+      bottom: 15px;
+      display: flex;
+      right: 12px;
+      border: 1px solid #eee
+   }
+
+   .social-rail a {
+      width: 30px;
+      height: 30px;
+      border-bottom: 0;
+      border-right: 1px solid #eee
+   }
+
+   .hero-scroll {
+      height: 170vh;
+      min-height: 950px
+   }
+
+   .hero-stage {
+      min-height: 580px
+   }
+
+   .hero-first {
+      top: 22%;
+      font-size: 11.5vw
+   }
+
+   .hero-last {
+      font-size: 10.2vw;
+      bottom: 16%
+   }
+
+   .hero-description {
+      top: 35%;
+      font-size: 12px;
+      max-width: 100px
+   }
+
+   .hero-description span {
+      display: none
+   }
+
+   .hero-media {
+      top: 36%;
+      left: 34%;
+      width: 57%;
+      height: 30%
+   }
+
+   .scroll-prompt {
+      bottom: 7%;
+      gap: 12px
+   }
+
+   .hero-lines:after {
+      width: 60px;
+      height: 55px
+   }
+
+   .video-caption {
+      font-size: 8px;
+      left: 20px;
+      top: 25px;
+      letter-spacing: 2px
+   }
+
+   .about-scroll {
+      height: 125vh;
+      min-height: 850px
+   }
+
+   .about-stage {
+      min-height: 690px
+   }
+
+   .heritage-large {
+      top: 12%;
+      font-size: 19vw
+   }
+
+   .about-grid {
+      grid-template-columns: 1fr;
+      padding-top: 90px;
+      gap: 10px
+   }
+
+   .heritage-arrow {
+      font-size: 130px;
+      line-height: .8
+   }
+
+   .about-title {
+      font-size: 28px
+   }
+
+   .about-copy {
+      max-width: 100%
+   }
+
+   .about-copy>p:not(.eyebrow) {
+      font-size: 15px
+   }
+
+   .division-scroll {
+      height: auto;
+      min-height: 0
+   }
+
+   .division-stage {
+      position: relative;
+      height: auto;
+      min-height: 0;
+      padding: 60px 0
+   }
+
+   .division-stage h2 {
+      font-size: 28px
+   }
+
+   .card-arena {
+      height: auto;
+      margin-top: 35px
+   }
+
+   .division-cards {
+      position: relative;
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      padding: 12px 6px 24px;
+      scroll-snap-type: x mandatory
+   }
+
+   .product-card {
+      position: relative;
+      left: auto;
+      top: auto;
+      flex: 0 0 220px;
+      width: 220px;
+      height: 310px;
+      transform: none !important;
+      scroll-snap-align: center
+   }
+
+   .product-card .product {
+      height: 140px
+   }
+
+   .orbit,
+   .orbit-logo {
+      display: none
+   }
+
+   .division-hint {
+      margin-top: 15px
+   }
+
+   .process {
+      padding-block: 70px 100px
+   }
+
+   .process-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding-top: 35px;
+      padding-right: 80px
+   }
+
+   .step {
+      min-height: 100px;
+      max-width: none
+   }
+
+   .step:nth-of-type(even) {
+      transform: none
+   }
+
+   .step:nth-of-type(even):after {
+      left: auto;
+      right: -3px
+   }
+
+   .step h3 {
+      font-size: 14px
+   }
+
+   .step p {
+      font-size: 15px
+   }
+
+   .tool-track {
+      left: auto;
+      right: 0;
+      transform: none;
+      width: 50px;
+      top: 35px
+   }
+
+   .tool-track img {
+      width: 38px;
+      height: 170px;
+      left: 5px
+   }
+
+   .tool-track span {
+      left: 20px
+   }
+
+   .mission {
+      padding-top: 50px
+   }
+
+   .mission-grid {
+      grid-template-columns: 1fr;
+      gap: 35px
+   }
+
+   .mission h2 {
+      font-size: 28px
+   }
+
+   .mission-art {
+      height: 355px;
+      width: 260px
+   }
+
+   .mission-symbol {
+      height: 330px
+   }
+
+   .engineer {
+      height: 220px;
+      bottom: 25px
+   }
+
+   .mission-wordmark {
+      font-size: 13px
+   }
+
+   .stats {
+      margin-top: 35px;
+      padding-block: 20px
+   }
+
+   .stats>div {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center
+   }
+
+   .stats strong {
+      font-size: 30px
+   }
+
+   .stats span {
+      font-size: 9px
+   }
+
+   .quality {
+      padding: 70px 0
+   }
+
+   .quality-grid {
+      grid-template-columns: 1fr 1fr
+   }
+
+   .quality-grid a {
+      padding: 25px 15px !important;
+      min-height: 170px
+   }
+
+   .quality-grid a:nth-child(2) {
+      border-right: 0
+   }
+
+   .quality-grid a:nth-child(-n+2) {
+      border-bottom: 1px solid var(--line)
+   }
+
+   .quality-grid p {
+      font-size: 13px
+   }
+
+   .industry-scroll {
+      height: 160vh;
+      min-height: 1000px
+   }
+
+   .industry-stage {
+      min-height: 580px;
+      padding-block: 30px
+   }
+
+   .industry-panel {
+      height: 380px;
+      min-height: 300px;
+      margin-top: 20px
+   }
+
+   .industry-tabs {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 1fr);
+      background: linear-gradient(90deg, #0008, transparent)
+   }
+
+   .industry-tabs button {
+      padding: 12px 15px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 15px;
+      border-right: 0;
+      border-top: 0;
+      border-left: 3px solid transparent;
+      border-bottom: 1px solid #ffffff30
+   }
+
+   .industry-tabs button[aria-selected=true] {
+      border-left-color: var(--orange)
+   }
+
+   .industry-tabs strong {
+      font-size: 15px
+   }
+
+   .industry-tabs small {
+      font-size: 11px
+   }
+
+   .industry-tabs [aria-selected=true] small {
+      margin-top: 2px
+   }
+
+   .industry-images img {
+      object-position: 60%
+   }
+
+   .industry-hint {
+      font-size: 10px
+   }
+
+   .marquee-track span {
+      font-size: 21px;
+      gap: 18px;
+      padding-right: 18px
+   }
+
+   .contact {
+      padding: 50px 0;
+      background: linear-gradient(#1d1d1d 0 45%, var(--orange) 45%)
+   }
+
+   .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 40px
+   }
+
+   .certificates {
+      gap: 14px
+   }
+
+   .certificates img {
+      height: 80px;
+      width: 62px
+   }
+
+   form {
+      padding: 25px
+   }
+
+   .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px
+   }
+
+   .footer-grid>div:last-child {
+      grid-column: 1/-1
+   }
+
+   .footer-bottom {
+      flex-direction: column;
+      margin-bottom: 35px;
+      gap: 10px
+   }
+
+   .footer-logo {
+      width: 135px
+   }
+}
+
+@media(prefers-reduced-motion:reduce) {
+   html {
+      scroll-behavior: auto
+   }
+
+   .marquee-track {
+      animation: none
+   }
+
+   .industry-images img {
+      transition: none
+   }
+
+   .hero-scroll,
+   .about-scroll,
+   .division-scroll,
+   .industry-scroll {
+      height: auto;
+      min-height: 0
+   }
+
+   .hero-stage,
+   .about-stage,
+   .division-stage,
+   .industry-stage {
+      position: relative
+   }
+
+   .hero-stage {
+      height: 90vh
+   }
+
+   .about-stage {
+      height: auto;
+      padding-block: 100px
+   }
+
+   .heritage-large {
+      position: relative;
+      top: auto;
+      font-size: 14vw
+   }
+
+   .about-grid {
+      padding-top: 30px
+   }
+
+   .division-stage {
+      height: auto
+   }
+
+   .division-cards {
+      display: flex;
+      position: relative;
+      overflow: auto;
+      gap: 15px;
+      padding: 20px
+   }
+
+   .product-card {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none !important;
+      flex-shrink: 0
+   }
+
+   .card-arena {
+      height: auto
+   }
+
+   .orbit,
+   .orbit-logo {
+      display: none
+   }
+
+   .industry-stage {
+      height: auto;
+      min-height: 0;
+      padding-block: 60px
+   }
+}
+
+.quality-icon svg {
+   width: 38px;
+   height: 38px;
+   stroke: currentColor;
+   stroke-width: 1.3;
+   fill: none
+}
+
+/* Shared rhythm: 50px between same-background sections; 100px across colour changes.
+   Sticky scene heights control animation duration, not editorial section padding. */
+:root {
+   --section-gap: 50px;
+   --colour-gap: 100px
+}
+
+.process {
+   padding-top: var(--section-gap);
+   padding-bottom: 50px
+}
+
+.mission {
+   padding-top: 50px
+}
+
+.quality {
+   padding-top: 76px;
+   padding-bottom: 0
+}
+
+.industry-stage {
+   justify-content: flex-start;
+   padding-top: var(--section-gap);
+   padding-bottom: 0
+}
+
+.contact {
+   padding-top: var(--colour-gap);
+   padding-bottom: 50px
+}
+
+footer {
+   padding-top: 50px
+}
+
+@media(max-width:760px) {
+   .process {
+      padding-top: 50px;
+      padding-bottom: 70px
+   }
+
+   .mission {
+      padding-top: 30px
+   }
+
+   .quality {
+      padding-top: 80px;
+      padding-bottom: 0
+   }
+
+   .contact {
+      padding-top: 100px
+   }
+
+   .industry-stage {
+      padding-top: 50px
+   }
+}
+
+.heritage-large {
+   font-family: Toxigenesis, Arial, sans-serif;
+   letter-spacing: -.035em;
+   font-size: clamp(90px, 13.5vw, 190px)
+}
+
+.orbit-logo {
+   width: 120px
+}
+
+@media(max-width:760px) {
+   .heritage-large {
+      font-size: 15vw
+   }
+}
+
+/* Revision: editorial spacing, horizontal reveal, and reference-led footer. */
+.hero-scroll {
+   height: 185vh;
+   min-height: 1050px
+}
+
+.about-scroll {
+   height: 115vh;
+   min-height: 760px
+}
+
+.about-stage {
+   height: 85vh;
+   min-height: 640px
+}
+
+.heritage-large {
+   top: 35px
+}
+
+.about-grid {
+   padding-top: 170px;
+   gap: 80px
+}
+
+.heritage-photo {
+   margin: 0;
+   position: relative;
+   height: 300px;
+   overflow: hidden;
+   background: #eee
+}
+
+.heritage-photo>img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover
+}
+
+.heritage-photo:after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(transparent 30%, #000b)
+}
+
+.heritage-photo figcaption {
+   position: absolute;
+   left: 26px;
+   bottom: 24px;
+   color: white;
+   z-index: 1;
+   border-left: 3px solid var(--orange);
+   padding-left: 16px
+}
+
+.heritage-photo figcaption span {
+   display: block;
+   font-size: 9px;
+   letter-spacing: 2px;
+   margin-bottom: 8px
+}
+
+.heritage-photo figcaption strong {
+   font-size: 19px;
+   line-height: 1.3;
+   font-weight: 500
+}
+
+.division-scroll {
+   height: 165vh;
+   min-height: 1050px
+}
+
+.division-stage {
+   height: 85vh;
+   min-height: 620px;
+   display: flex;
+   align-items: center;
+   padding: 40px 0
+}
+
+.card-arena {
+   height: 360px;
+   margin-top: 30px;
+   max-width: 1200px
+}
+
+.orbit,
+.orbit-logo {
+   display: none !important
+}
+
+.division-hint {
+   margin-top: 10px
+}
+
+.process {
+   padding-top: 100px;
+   padding-bottom: 110px
+}
+
+.process-grid {
+   gap: 35px 230px;
+   padding-top: 45px
+}
+
+.step {
+   min-height: 115px
+}
+
+.step:nth-of-type(even) {
+   transform: translateY(40px)
+}
+
+.mission {
+   padding-top: 65px
+}
+
+.mission-art {
+   height: 425px
+}
+
+.mission-symbol {
+   height: 390px
+}
+
+.engineer {
+   height: 260px
+}
+
+.stats {
+   margin-top: 30px
+}
+
+.quality {
+   padding-top: 100px;
+   padding-bottom: 50px
+}
+
+.quality h2 {
+   margin-bottom: 30px
+}
+
+.quality-grid a {
+   padding-top: 30px;
+   padding-bottom: 30px;
+   min-height: 165px
+}
+
+.industry-scroll {
+   height: 160vh;
+   min-height: 1100px
+}
+
+.industry-stage {
+   height: 90vh;
+   min-height: 650px;
+   padding-top: 50px
+}
+
+.contact {
+   padding-top: 75px;
+   padding-bottom: 75px
+}
+
+.new-footer {
+   padding: 95px 0 25px;
+   background: #181818;
+   color: #fff;
+   font-size: 15px
+}
+
+.footer-main {
+   display: grid;
+   grid-template-columns: 1.2fr .85fr 1fr;
+   gap: 65px
+}
+
+.footer-invitation h2 {
+   font-size: 40px;
+   line-height: 1.12;
+   margin: 0 0 30px
+}
+
+.footer-invitation>p:last-child {
+   max-width: 330px;
+   color: #aaa;
+   margin-top: 28px;
+   font-size: 15px
+}
+
+.footer-cta {
+   display: inline-flex;
+   gap: 16px;
+   align-items: center;
+   background: var(--orange);
+   border-radius: 40px;
+   padding: 10px 10px 10px 24px;
+   font-size: 11px;
+   letter-spacing: .5px
+}
+
+.footer-cta span {
+   width: 42px;
+   height: 42px;
+   display: grid;
+   place-items: center;
+   border-radius: 50%;
+   background: #181818;
+   font-size: 23px
+}
+
+.footer-middle section+section,
+.footer-right section+section {
+   margin-top: 45px
+}
+
+.new-footer h3 {
+   font: 13px Toxigenesis, sans-serif;
+   letter-spacing: .5px;
+   margin-bottom: 17px
+}
+
+.footer-right {
+   text-align: right
+}
+
+.footer-right>section>a {
+   display: block
+}
+
+.footer-social,
+.footer-links {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 9px 18px
+}
+
+.footer-links {
+   justify-content: flex-end
+}
+
+.footer-social a:before,
+.footer-links a:before,
+.footer-links button:before {
+   content: '•';
+   color: var(--orange);
+   margin-right: 8px
+}
+
+.new-footer button {
+   background: none;
+   border: 0;
+   padding: 0;
+   font: inherit;
+   color: inherit;
+   text-align: inherit
+}
+
+.new-footer a:hover,
+.new-footer button:hover {
+   color: var(--orange)
+}
+
+.new-footer .footer-cta:hover {
+   color: white;
+   background: #e95700
+}
+
+.footer-legal {
+   margin-top: 65px;
+   padding-top: 25px;
+   border-top: 1px solid #4b4b4b;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap: 30px;
+   font-size: 12px;
+   color: #ddd
+}
+
+.footer-legal small {
+   display: block;
+   font-size: 10px;
+   margin-top: 7px;
+   color: #888
+}
+
+.footer-legal>div:last-child {
+   display: flex;
+   gap: 10px
+}
+
+.footer-banner {
+   height: 270px;
+   position: relative;
+   overflow: hidden;
+   margin-top: 55px;
+   background: var(--orange)
+}
+
+.footer-banner>img:first-child {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   mix-blend-mode: multiply;
+   filter: grayscale(1);
+   opacity: .8
+}
+
+.footer-banner>span {
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: -10px;
+   text-align: center;
+   font: clamp(45px, 7.5vw, 108px)/1 Toxigenesis, sans-serif;
+   letter-spacing: -.045em;
+   color: #191919b0;
+   white-space: nowrap
+}
+
+.footer-banner-logo {
+   position: absolute;
+   left: 30px;
+   top: 25px;
+   width: 150px;
+   height: 70px;
+   object-fit: contain;
+   object-position: left center
+}
+
+.footer-top {
+   display: block;
+   text-align: right;
+   font-size: 10px;
+   letter-spacing: 1.4px;
+   margin-top: 20px
+}
+
+@media(max-width:1000px) and (min-width:761px) {
+   .product-card {
+      width: 170px
+   }
+
+   .footer-main {
+      gap: 30px
+   }
+
+   .about-grid {
+      gap: 40px
+   }
+
+   .footer-cta {
+      font-size: 10px;
+      padding-left: 15px
+   }
+}
+
+@media(max-width:760px) {
+   .hero-scroll {
+      height: 170vh;
+      min-height: 950px
+   }
+
+   .about-scroll {
+      height: 135vh;
+      min-height: 920px
+   }
+
+   .about-stage {
+      height: 110vh;
+      min-height: 800px
+   }
+
+   .heritage-large {
+      top: 35px
+   }
+
+   .about-grid {
+      padding-top: 120px;
+      gap: 28px
+   }
+
+   .heritage-photo {
+      height: 190px
+   }
+
+   .heritage-photo figcaption {
+      bottom: 18px;
+      left: 18px
+   }
+
+   .heritage-photo figcaption strong {
+      font-size: 16px
+   }
+
+   .about-title {
+      font-size: 28px
+   }
+
+   .division-scroll {
+      height: auto;
+      min-height: 0
+   }
+
+   .division-stage {
+      height: auto;
+      min-height: 0;
+      padding: 50px 0
+   }
+
+   .card-arena {
+      height: auto;
+      margin-top: 25px
+   }
+
+   .process {
+      padding-block: 50px 80px
+   }
+
+   .process-grid {
+      gap: 28px;
+      padding-top: 35px
+   }
+
+   .step:nth-of-type(even) {
+      transform: none
+   }
+
+   .mission {
+      padding-top: 45px
+   }
+
+   .mission-art {
+      height: 355px
+   }
+
+   .mission-symbol {
+      height: 330px
+   }
+
+   .engineer {
+      height: 220px
+   }
+
+   .quality {
+      padding-top: 65px;
+      padding-bottom: 0
+   }
+
+   .industry-stage {
+      height: 100vh;
+      min-height: 650px
+   }
+
+   .industry-scroll {
+      height: 165vh;
+      min-height: 1100px
+   }
+
+   .contact {
+      padding-block: 60px
+   }
+
+   .new-footer {
+      padding-top: 60px
+   }
+
+   .footer-main {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 25px
+   }
+
+   .footer-invitation {
+      grid-column: 1/-1
+   }
+
+   .footer-invitation h2 {
+      font-size: 28px
+   }
+
+   .footer-right {
+      text-align: left
+   }
+
+   .footer-links {
+      justify-content: flex-start
+   }
+
+   .footer-main p,
+   .footer-main a,
+   .footer-main button {
+      overflow-wrap: anywhere
+   }
+
+   .footer-middle section+section,
+   .footer-right section+section {
+      margin-top: 30px
+   }
+
+   .footer-legal {
+      margin-top: 40px;
+      flex-direction: column;
+      gap: 20px
+   }
+
+   .footer-banner {
+      margin-top: 35px;
+      height: 200px
+   }
+
+   .footer-banner-logo {
+      left: 20px;
+      top: 15px;
+      width: 120px
+   }
+
+   .footer-banner>span {
+      font-size: 8.5vw;
+      bottom: 20px
+   }
+
+   .footer-top {
+      margin-bottom: 40px
+   }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+   .hero-scroll,
+   .about-scroll,
+   .division-scroll,
+   .industry-scroll {
+      height: auto;
+      min-height: 0
+   }
+
+   .about-stage {
+      height: auto;
+      min-height: 0;
+      padding-block: 55px
+   }
+
+   .heritage-large {
+      top: auto
+   }
+
+   .about-grid {
+      padding-top: 35px
+   }
+
+   .division-stage {
+      height: auto;
+      min-height: 0
+   }
+
+   .card-arena {
+      height: auto
+   }
+
+   .industry-stage {
+      height: auto;
+      min-height: 0;
+      padding-bottom: 50px
+   }
+}
+
+/* Industry interaction is hover/focus on desktop and tap on touch devices. */
+.industry-scroll {
+   height: auto;
+   min-height: 0;
+   padding-bottom: 65px
+}
+
+.industry-stage {
+   position: relative;
+   height: auto;
+   min-height: 0;
+   padding-top: 50px;
+   padding-bottom: 0
+}
+
+#enquiry h3 {
+   font-family: Toxigenesis, Arial, sans-serif;
+   font-size: 28px;
+   line-height: 1.2;
+   font-weight: 400;
+   letter-spacing: -.025em;
+   margin-bottom: 25px
+}
+
+@media(max-width:760px) {
+   #enquiry h3 {
+      font-size: 24px
+   }
+
+   .industry-scroll {
+      padding-bottom: 50px
+   }
+}
+
+/* Client revision: larger imagery, readable branding, and persistent navigation. */
+header {
+   position: fixed;
+   height: 90px;
+   background: rgba(255, 255, 255, .97);
+   border-bottom: 1px solid #eeeeee;
+   box-shadow: 0 3px 18px #00000006;
+   backdrop-filter: blur(12px);
+   z-index: 60
+}
+
+.logo {
+   width: 165px;
+   height: 66px
+}
+
+.nav nav {
+   font-size: 15px;
+   gap: 25px
+}
+
+.nav {
+   gap: 25px
+}
+
+.nav-actions {
+   gap: 18px
+}
+
+html {
+   scroll-padding-top: 105px
+}
+
+.heritage-photo {
+   height: 330px
+}
+
+.heritage-photo>img {
+   filter: none;
+   opacity: 1;
+   object-position: center
+}
+
+.heritage-photo:after {
+   background: linear-gradient(transparent 45%, rgba(0, 0, 0, .62))
+}
+
+.division-stage {
+   top: 90px;
+   height: calc(90vh - 90px);
+   min-height: 620px;
+   padding: 35px 0
+}
+
+.card-arena {
+   height: 420px;
+   margin-top: 25px
+}
+
+.product-card {
+   width: calc((100% - 64px)/5);
+   height: 365px;
+   padding: 20px 18px 16px
+}
+
+.card-logo {
+   width: 145px;
+   height: 56px;
+   flex-shrink: 0;
+   margin-bottom: 15px
+}
+
+.card-logo.subsidiary {
+   width: 125px;
+   height: 56px
+}
+
+.product-card h3 {
+   font-size: 19px;
+   line-height: 1.15
+}
+
+.product-card p {
+   font-size: 12px
+}
+
+.product-card .product {
+   height: 155px
+}
+
+.product-card a {
+   font-size: 9px;
+   padding-top: 10px
+}
+
+.mission-art {
+   height: 510px;
+   max-width: 360px
+}
+
+.mission-composition {
+   width: 100%;
+   height: 100%;
+   display: block;
+   filter: drop-shadow(0 7px 10px #83320035)
+}
+
+.mission-wordmark {
+   bottom: 0;
+   font-size: 19px
+}
+
+.industry-panel {
+   height: 620px;
+   min-height: 620px
+}
+
+.industry-scroll {
+   padding-bottom: 75px
+}
+
+.industry-tabs button {
+   padding: 24px 20px
+}
+
+.industry-tabs strong {
+   font-size: 20px
+}
+
+@media(max-width:1100px) and (min-width:761px) {
+   .nav nav {
+      font-size: 13px;
+      gap: 15px
+   }
+
+   .nav {
+      gap: 18px
+   }
+
+   .logo {
+      width: 140px;
+      height: 60px
+   }
+
+   .nav-actions .button {
+      padding: 11px 12px
+   }
+
+   .product-card {
+      padding: 15px 12px
+   }
+
+   .product-card h3 {
+      font-size: 16px
+   }
+
+   .card-logo {
+      width: 130px
+   }
+
+   .card-logo.subsidiary {
+      width: 105px
+   }
+
+   .product-card a {
+      font-size: 7px
+   }
+}
+
+@media(max-width:760px) {
+   header {
+      height: 80px
+   }
+
+   .logo {
+      width: 140px;
+      height: 58px
+   }
+
+   .nav nav {
+      top: 80px;
+      font-size: 15px
+   }
+
+   .nav {
+      gap: 12px
+   }
+
+   .nav-actions {
+      gap: 0
+   }
+
+   .heritage-photo {
+      height: 230px
+   }
+
+   .about-stage {
+      min-height: 850px
+   }
+
+   .about-scroll {
+      min-height: 980px
+   }
+
+   .division-stage {
+      top: auto;
+      height: auto;
+      min-height: 0;
+      padding: 45px 0
+   }
+
+   .card-arena {
+      height: auto
+   }
+
+   .product-card {
+      width: 270px;
+      flex-basis: 270px;
+      height: 385px;
+      padding: 22px
+   }
+
+   .card-logo {
+      width: 150px;
+      height: 60px
+   }
+
+   .card-logo.subsidiary {
+      width: 130px;
+      height: 60px
+   }
+
+   .product-card .product {
+      height: 170px
+   }
+
+   .mission-art {
+      height: 430px;
+      width: 280px
+   }
+
+   .mission-wordmark {
+      font-size: 16px
+   }
+
+   .industry-panel {
+      height: 540px;
+      min-height: 540px
+   }
+
+   .industry-tabs strong {
+      font-size: 17px
+   }
+
+   .industry-tabs button {
+      padding: 18px 15px
+   }
+
+   .industry-scroll {
+      padding-bottom: 50px
+   }
+}
+
+@media(prefers-reduced-motion:reduce) {
+   .division-stage {
+      top: auto;
+      height: auto;
+      min-height: 0
+   }
+
+   .product-card {
+      width: 227px;
+      flex-basis: 227px
+   }
+}
+
+/* ITM dark lettering becomes white; original red/white emblem is preserved. */
+.card-logo[src$="logo-itm.png"] {
+   filter: url(#itm-white-lettering)
+}
+
+/* Equal footer baseline independent of heading wraps and product image size. */
+.product-card {
+   padding-bottom: 58px
+}
+
+.product-card>a {
+   position: absolute;
+   left: 18px;
+   right: 18px;
+   bottom: 16px;
+   height: 32px;
+   margin: 0;
+   padding-top: 10px;
+   box-sizing: border-box;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-shrink: 0
+}
+
+.product-card .product {
+   min-height: 0;
+   flex-shrink: 1
+}
+
+@media(max-width:1100px) and (min-width:761px) {
+   .product-card>a {
+      left: 12px;
+      right: 12px
+   }
+}
+
+@media(max-width:760px) {
+   .product-card {
+      padding-bottom: 64px
+   }
+
+   .product-card>a {
+      left: 22px;
+      right: 22px;
+      bottom: 22px
+   }
+}
+
+/* Industry panel: trim approximately 160px from the top, keep bottom labels. */
+@media(min-width:761px) {
+   .industry-panel {
+      height: 460px;
+      min-height: 460px
+   }
+
+   .industry-images img {
+      height: 620px;
+      top: auto;
+      bottom: 0;
+      object-position: center bottom;
+      transform-origin: center bottom
+   }
+}
+
+/* Keep the approved panel size while displaying each full image. */
+.industry-panel {
+   background: #d5d7d8
+}
+
+.industry-images img,
+.industry-images img.active {
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+   object-position: center;
+   transform: none
+}
+
+/* Shared hero composition and fixed form/background overlap across desktop displays. */
+@media(min-width:761px) {
+   .hero-stage {
+      min-height: 570px;
+      --hero-scale: 1
+   }
+
+   .hero-copy {
+      width: calc(1200px * var(--hero-scale));
+      max-width: none;
+      height: calc(650px * var(--hero-scale));
+      padding-top: 0;
+      top: calc(90px + (100% - 90px - 650px * var(--hero-scale))/2)
+   }
+
+   .hero-first,
+   .hero-last {
+      font-size: calc(126px * var(--hero-scale));
+      line-height: .98
+   }
+
+   .hero-first {
+      top: calc(20px * var(--hero-scale))
+   }
+
+   .hero-last {
+      bottom: calc(20px * var(--hero-scale))
+   }
+
+   .hero-description {
+      top: calc(220px * var(--hero-scale));
+      font-size: 18px
+   }
+
+   .hero-media {
+      width: calc(400px * var(--hero-scale));
+      height: calc(250px * var(--hero-scale));
+      left: calc(50% - 200px * var(--hero-scale));
+      top: calc(90px + (100% - 90px - 650px * var(--hero-scale))/2 + 190px * var(--hero-scale))
+   }
+
+   .scroll-prompt {
+      bottom: calc(35px * var(--hero-scale))
+   }
+
+   .contact {
+      background: linear-gradient(90deg, #1d1d1d 0 var(--contact-split, 58%), var(--orange) var(--contact-split, 58%) 100%)
+   }
+
+   .contact-grid {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 100px
+   }
+
+   #enquiry {
+      width: 100%;
+      min-width: 0
+   }
+}
+
+@media(min-width:761px) and (max-width:1000px) {
+   .contact-grid {
+      gap: 55px
+   }
+}
+
+/* Taller alternating process timeline; native parent-bounded sticky tool. */
+.process {
+   padding-top: 80px;
+   padding-bottom: 100px
+}
+
+.process-grid {
+   padding-top: 70px;
+   padding-bottom: 115px;
+   row-gap: 100px;
+   column-gap: 230px
+}
+
+.step {
+   min-height: 150px;
+   padding-top: 18px
+}
+
+.step:nth-of-type(even) {
+   transform: translateY(115px)
+}
+
+.step h3 {
+   margin-top: 8px;
+   margin-bottom: 10px
+}
+
+.tool-track {
+   top: 40px;
+   bottom: 0;
+   width: 90px
+}
+
+.tool-track:before {
+   border-left-style: solid;
+   background: none
+}
+
+.tool-ghost {
+   display: none !important
+}
+
+.tool-track .moving-tool {
+   position: sticky;
+   top: 120px;
+   left: auto;
+   margin-inline: auto;
+   display: block;
+   width: 74px;
+   height: 330px;
+   transform: none !important;
+   filter: none;
+   will-change: auto
+}
+
+.tool-track span {
+   left: 42px;
+   bottom: -20px
+}
+
+@media(max-width:760px) {
+   .process {
+      padding-top: 60px;
+      padding-bottom: 75px
+   }
+
+   .process-grid {
+      padding-top: 40px;
+      padding-bottom: 20px;
+      row-gap: 50px;
+      column-gap: 0;
+      padding-right: 80px
+   }
+
+   .step {
+      min-height: 140px;
+      padding-top: 16px
+   }
+
+   .step:nth-of-type(even) {
+      transform: none
+   }
+
+   .tool-track {
+      top: 40px;
+      width: 55px
+   }
+
+   .tool-track .moving-tool {
+      width: 45px;
+      height: 200px;
+      top: 105px
+   }
+
+   .tool-track span {
+      left: 25px
+   }
+}
+
+@media(prefers-reduced-motion:reduce) {
+   .tool-track .moving-tool {
+      position: relative;
+      top: 0
+   }
+}
+
+/* Process follows the shared centered heading and balanced 1200px grid. */
+.process.container {
+   width: min(1200px, calc(100% - 64px));
+   margin-inline: auto
+}
+
+.process>.eyebrow,
+.process>h2,
+.process>.section-intro {
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto
+}
+
+.process>h2 {
+   max-width: 960px
+}
+
+.process>.section-intro {
+   max-width: 640px
+}
+
+.process-grid {
+   width: 100%;
+   margin-inline: auto;
+   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)
+}
+
+.process-grid .step {
+   width: 100%;
+   max-width: none;
+   justify-self: stretch
+}
+
+.process-grid .step p {
+   max-width: 340px
+}
+
+@media(min-width:761px) {
+   .process-grid .tool-track {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%)
+   }
+}
+
+@media(max-width:760px) {
+   .process.container {
+      width: calc(100% - 40px)
+   }
+
+   .process-grid {
+      grid-template-columns: minmax(0, 1fr)
+   }
+
+   .process-grid .tool-track {
+      left: auto;
+      right: 0;
+      transform: none
+   }
+}
+
+/* Subtle precision drawings frame the division cards without competing with them. */
+.division-stage {
+   isolation: isolate;
+   background: #f4f5f6
+}
+
+.division-stage:before,
+.division-stage:after {
+   content: "";
+   position: absolute;
+   pointer-events: none;
+   z-index: -1;
+   background-repeat: no-repeat;
+   background-size: contain;
+   opacity: .065
+}
+
+.division-stage:before {
+   background-image: url('assets/images/division-holder-drawing.svg');
+   width: 470px;
+   height: 355px;
+   left: -150px;
+   bottom: -75px
+}
+
+.division-stage:after {
+   background-image: url('assets/images/division-tool-drawing.svg');
+   width: 290px;
+   height: 430px;
+   right: -85px;
+   top: -100px;
+   opacity: .055
+}
+
+.division-stage>.container {
+   position: relative;
+   z-index: 1
+}
+
+@media(min-width:1600px) {
+   .division-stage:before {
+      left: calc(50% - 890px);
+      bottom: -40px
+   }
+
+   .division-stage:after {
+      right: calc(50% - 850px);
+      top: -65px
+   }
+}
+
+@media(max-width:760px) {
+   .division-stage:before {
+      width: 280px;
+      height: 210px;
+      left: -110px;
+      bottom: -40px;
+      opacity: .05
+   }
+
+   .division-stage:after {
+      width: 180px;
+      height: 270px;
+      right: -75px;
+      top: -55px;
+      opacity: .045
+   }
+}
+
+/* Increase technical drawing visibility while keeping cards dominant. */
+.division-stage:before {
+   opacity: .18
+}
+
+.division-stage:after {
+   opacity: .16
+}
+
+@media(max-width:760px) {
+   .division-stage:before {
+      opacity: .14
+   }
+
+   .division-stage:after {
+      opacity: .13
+   }
+}
+
+/* Wider process composition matching the approved first reference. */
+@media(min-width:761px) {
+   .process-grid {
+      column-gap: 32%
+   }
+}
+
+/* Quiet manufacturing details behind the footer content. */
+.new-footer {
+   position: relative;
+   isolation: isolate;
+   overflow: hidden
+}
+
+.new-footer::before,
+.new-footer::after {
+   content: "";
+   position: absolute;
+   pointer-events: none;
+   z-index: -1
+}
+
+.new-footer::before {
+   inset: 0;
+   background-image: radial-gradient(circle, rgba(255, 255, 255, .13) .8px, transparent 1px);
+   background-size: 28px 28px;
+   mask-image: linear-gradient(115deg, #000, transparent 48%, #000);
+   -webkit-mask-image: linear-gradient(115deg, #000, transparent 48%, #000)
+}
+
+/* Static perimeter detail inspired by the original site's technical elements. */
+.new-footer::after {
+   inset: 0;
+   background-image: url('assets/images/footer-technical.svg');
+   background-repeat: no-repeat;
+   background-position: center top;
+   background-size: 100% 750px;
+   filter: none;
+   opacity: .10;
+   animation: none;
+   transform: none
+}
+
+@media(max-width:760px) {
+   .new-footer::after {
+      background-size: auto 900px;
+      background-position: center top;
+      opacity: .07
+   }
+}
+
+/* Static metrology details: subtle arcs, datum marks and measurement scales. */
+.division-stage {
+   background-color: #f4f5f6;
+   background-image: url('assets/images/division-metrology.svg');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 100% 100%
+}
+
+@media(max-width:760px) {
+   .division-stage {
+      background-size: auto 100%;
+      background-position: center
+   }
+}
+/* Smooth scroll rotation keeps the existing parent-bounded sticky travel. */
+.tool-track .moving-tool{transform:perspective(700px) rotateY(var(--tool-angle,0deg))!important;transform-origin:50% 50%;will-change:transform}
+@media(max-width:760px){.tool-track .moving-tool{transform:perspective(700px) rotateY(var(--tool-angle,0deg))!important}}
+@media(prefers-reduced-motion:reduce){.tool-track .moving-tool{transform:none!important;will-change:auto}}
+
+/* The drill now rotates as lit XYZ geometry, never as a flat image plane. */
+.tool-track canvas.moving-tool{width:100px;max-width:none;position:sticky;transform:none!important;will-change:auto;margin-left:-5px}
+@media(max-width:760px){.tool-track canvas.moving-tool{width:60px;margin-left:-2.5px;transform:none!important}}
+
+/* Final menu, imagery, certificates and brand alignment refinements. */
+#language-button{display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.language-chevron{width:13px;height:13px;display:block;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}
+.social-rail a{display:flex;align-items:center;justify-content:center}
+.social-rail svg{width:17px;height:17px;display:block}
+.footer-social a{display:inline-flex;align-items:center;gap:7px}
+.footer-social a:before{display:none}
+.footer-social svg{width:16px;height:16px;flex-shrink:0;color:var(--orange)}
+.industry-images img,.industry-images img.active{object-fit:cover;object-position:center;inset:0;width:100%;height:100%;transform:none}
+.stats strong{font-variant-numeric:tabular-nums;min-width:2ch}
+.contact-copy .certification-proof{font-size:15px;line-height:1.6;color:#c5c5c5;margin-top:22px;max-width:480px}
+.footer-banner>span{left:30px;right:30px;text-align:left;font-size:clamp(32px,6vw,92px)}
+.footer-banner-logo{left:30px}
+@media(max-width:760px){.footer-banner>span{left:20px;right:20px;font-size:clamp(25px,7vw,46px)}.footer-banner-logo{left:20px}}
+
+/* Certificate title precedes the proof; large footer branding shares one start edge. */
+.contact-copy .certification-proof{font:22px/1.35 Toxigenesis,sans-serif;color:#fff;margin:30px 0 18px;max-width:100%}
+.contact-copy .certificates{margin-top:0}
+.footer-banner{container-type:inline-size}
+.footer-brand-group{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max-content;max-width:calc(100% - 60px);display:flex;flex-direction:column;align-items:flex-start;gap:25px}
+.footer-brand-group .footer-banner-logo{position:static;width:180px;height:84px;object-fit:contain;object-position:left center}
+.footer-brand-group>span{font:clamp(30px,8.5cqw,108px)/1 Toxigenesis,sans-serif;letter-spacing:-.045em;color:#191919b0;white-space:nowrap;display:block}
+@media(max-width:760px){.footer-brand-group{max-width:calc(100% - 40px);gap:18px}.footer-brand-group .footer-banner-logo{width:150px;height:70px}.contact-copy .certification-proof{font-size:20px}}
+
+/* Hero product list readability. */
+.hero-description{font-size:18px;max-width:230px}
+
+/* Two equal, long keyword groups create a seamless single-line loop. */
+.marquee-track{animation-duration:85s}
+.marquee-track>span{flex-shrink:0;min-width:100vw}
+
+/* A short 220px scroll opens the whole row; no long pinned runway. */
+@media(min-width:761px) and (prefers-reduced-motion:no-preference){
+ .division-scroll{height:calc(max(620px,90vh - 90px) + 260px);min-height:0}
+ .product-card{transition:transform 280ms cubic-bezier(.22,.61,.36,1)}
+}
+
+/* Entry reveal is time-based, so all cards are open before leaving the section. */
+@media(min-width:761px) and (prefers-reduced-motion:no-preference){
+ .division-scroll{height:calc(max(620px,90vh - 90px) + 100px);min-height:0}
+ .product-card{transition:none}
+}
+
+/* Preserve the visible stack on approach, then reveal during the last entry scroll. */
+@media(min-width:761px) and (prefers-reduced-motion:no-preference){
+ .product-card{transition:transform 100ms linear}
+}
+
+/* Short pinned reveal plus a fully-open hold before releasing the section. */
+@media(min-width:761px) and (prefers-reduced-motion:no-preference){
+ .division-scroll{height:calc(max(620px,90vh - 90px) + 380px);min-height:0;position:relative;overflow:visible}
+ .division-stage{position:sticky;top:90px;height:max(620px,calc(90vh - 90px));min-height:620px}
+ .product-card{transition:transform 80ms linear}
+}

@@ -1,0 +1,31 @@
+BIRLA PRECISION — LATEST COMPLETE WEBSITE REVIEW
+
+1. Extract the ZIP completely before opening the website.
+2. Open index.html in Chrome, Edge or Safari.
+3. Keep all files and the assets folder together.
+
+This package includes the latest homepage, styling, scroll animations,
+3D drill renderer, images, logos, video, fonts and certificates.
+Homepage assets are local; no installation or build step is required.
+If your browser blocks video autoplay, allow it and reload.
+
+OPTIONAL LOCAL SERVER
+Open a terminal in this extracted folder and run:
+python3 -m http.server 8000
+Then open http://localhost:8000
+Keep that terminal open while reviewing. Python 3 is required for this option.
+
+REVIEW NOTES
+The language menu contains options; website content remains English.
+The enquiry form opens an email draft; it does not send automatically.
+Social and external company-page links require internet access.
+Some original footer destinations display information notices.
+Industry and engineer visuals are illustrative generated assets.
+
+FILES
+index.html — open this to view the website
+styles.css — styling
+script.js — interactions and scroll animations
+drill-3d.js — 3D drill renderer
+assets/ — images, logos, videos, fonts and certificates
+media-library.html — asset gallery
